@@ -1,0 +1,38 @@
+<% if current_user %>
+<div class="admin-bar"> 
+  <%= link_to 'New Employee', new_employee_path %>
+</div>
+<% end %>
+
+<h1>The Gatling Goats</h1>
+
+<table>
+  <% @employees.each do |employee| %>
+  <div class="row-fluid ">
+    <div class="span12 ticket goat ">
+      <div class="span2">
+       <a href="<%= employee.link %>"><%= image_tag employee.avatar, :size => "100x100"  if employee.avatar.file?%></a>
+     </div>
+     <div class="span10">
+       <h3><%= link_to employee.name, employee.link%></h3><br />
+       <%= employee.title %><br />
+       <%= mail_to employee.email, employee.email %>
+     </div>
+   </div>
+ </div>
+ <div class="row-fluid">
+  <div class="span12">
+    <% if current_user %>
+    <div class="admin-bar">
+      <%= link_to 'Edit', edit_employee_path(employee) %> or 
+      <%= link_to 'destroy', employee, confirm: 'Are you sure?', method: :delete %> <%=employee.name%>
+    </div>
+    <%else%>
+  </br>
+  <% end %>
+</div>
+</div>
+<% end %>
+</table>
+
+

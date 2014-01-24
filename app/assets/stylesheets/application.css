@@ -1,0 +1,145 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ *= require fancybox
+*/
+
+@import "bootstrap/bootstrap";
+ @import "bootstrap/responsive";
+ @import url(http://fonts.googleapis.com/css?family=Fredericka+the+Great);
+  @import url(http://fonts.googleapis.com/css?family=Amatic+SC:400,700);
+
+body{background-color: #333;
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;}
+
+body img{border:5px solid #b09b5c;}
+
+h3{font-family: 'Fredericka the Great', cursive!important;}
+h3:after {
+    content: "";
+    height: 1px;
+    background: -moz-linear-gradient(left,  rgba(0,0,0,0) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,0)), color-stop(50%,rgba(0,0,0,1)), color-stop(100%,rgba(0,0,0,0)));
+    background: -webkit-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 50%,rgba(0,0,0,0) 100%);
+    background: -o-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 56%,rgba(0,0,0,0) 100%);
+    background: -ms-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 50%,rgba(0,0,0,0) 100%);
+    background: linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 50%,rgba(0,0,0,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#00000000',GradientType=1 );
+    display: block;
+}
+
+.img-clean img{border:none!important;}
+
+#logo:hover{background:none!important;}
+
+
+.navfont{font-family: 'Amatic SC', cursive!important;}
+
+.navstripe{background-color:#e3d3a3!important;
+padding:10px;}
+
+.alig-right{text-align: right;}
+
+.place{
+background: url("hover.png") no-repeat center bottom;
+background-size:50px 12px;
+}
+
+.footnote{opacity: 0.4;}
+
+.homebanner{margin: 0 auto;
+text-align: center;
+padding-bottom: 20px;}
+
+.well{border: none !important;
+border-radius:1px !important;
+/*box-shadow: none !important;*/}
+
+.public-btn{
+border:2px solid #b09b5c;
+background:#b09b5c;
+padding:5px;}
+
+th .asc:after {
+  width: 0;
+  height: 0;
+  content: "";
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #333;
+  position: absolute;
+  margin-top: 7px;
+  margin-left: 5px;
+}
+
+th .desc:after {
+  width: 0;
+  height: 0;
+  content: "";
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #333;
+  position: absolute;
+  margin-top: 7px;
+  margin-left: 5px;
+}
+
+/*div types */
+
+div.ticket {
+    background:
+        -moz-radial-gradient(0 100%, circle, rgba(204,0,0,0) 14px, #e3d3a3 15px),
+        -moz-radial-gradient(100% 100%, circle, rgba(204,0,0,0) 14px, #e3d3a3 15px),
+        -moz-radial-gradient(100% 0, circle, rgba(204,0,0,0) 14px, #e3d3a3 15px),
+        -moz-radial-gradient(0 0, circle, rgba(204,0,0,0) 14px, #e3d3a3 15px);
+        /*-moz-radial-gradient(1% 1%, circle, rgba(204,0,0,0) 0px, #c00 0px),*/
+    background:
+         -o-radial-gradient(0 100%, circle, rgba(204,0,0,0) 14px, #e3d3a3 15px),
+         -o-radial-gradient(100% 100%, circle, rgba(204,0,0,0) 14px, #e3d3a3 15px),
+         -o-radial-gradient(100% 0, circle, rgba(204,0,0,0) 14px, #e3d3a3 15px),
+         -o-radial-gradient(0 0, circle, rgba(204,0,0,0) 14px, #e3d3a3 15px);
+    background:
+         -webkit-radial-gradient(0 100%, circle, rgba(204,0,0,0) 14px, #e3d3a3 15px),
+         -webkit-radial-gradient(100% 100%, circle, rgba(204,0,0,0) 14px, #e3d3a3 15px),
+         -webkit-radial-gradient(100% 0, circle, rgba(204,0,0,0) 14px, #e3d3a3 15px),
+         -webkit-radial-gradient(0 0, circle, rgba(204,0,0,0) 14px, #e3d3a3 15px);
+}
+
+div.ticket {
+    padding:15px;
+    background-position: bottom left, bottom right, top right, top left;
+    -moz-background-size: 50% 50%;
+    -webkit-background-size: 50% 50%;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.capchabox{
+  margin-bottom: 10px;
+  float:right;
+  border:3px dashed #e3d3a3;
+  background:white;
+  position: relative;
+  z-index:2;
+}
+
+.admin-bar{
+  background:#cdbe93;
+  padding:10px;}
+
+.twintop{
+border-style: solid; border-width: 42px 68px 47px 69px; -moz-border-image: url(Ornament1.png) 42 68 47 69 stretch; -webkit-border-image: url(Ornament1.png) 42 68 47 69 stretch; -o-border-image: url(Ornament1.png) 42 68 47 69 stretch; border-image: url(Ornament1.png) 42 68 47 69 fill stretch;
+}
+
+.accordion-toggle{background-color:#e3d3a3!important;}
+
+.simple_captcha{border:none!important;}

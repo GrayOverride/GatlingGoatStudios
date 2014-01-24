@@ -1,0 +1,11 @@
+ <% if current_user %>
+   <div class="admin-bar span12"> 
+<%= link_to 'Show all', employees_path %>
+   </div>
+ <% end %>
+
+<h1>New employee</h1>
+
+<%= render 'form' %>
+
+

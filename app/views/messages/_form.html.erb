@@ -1,0 +1,52 @@
+<%= form_for(@message) do |f| %>
+<% if @message.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</h2>
+
+  <ul>
+    <% @message.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<div id="letter" class="img-clean">
+<div class="row-fluid">
+
+  <div class="span7" id="letter-form">
+        <div class="field">
+      <%= f.label :message %>
+      <%= f.text_area :body, :rows => 14, :class => 'span12', :style =>"margin-right:50px;" %>
+    </div>
+  </div>
+  <div class="span5">
+  <%= image_tag('post-stamp.png', :style=>"position:absolute; width:300px; heigth:300px; z-index:1;")%>
+    <div class="capchabox">
+      <div class="field">
+        <%= show_simple_captcha(:object => 'message', :label => " ", :placeholder =>"Retype the Captcha") %>
+        <br/>
+      </div>
+    <br/>
+  </div>
+
+    <div class="field">
+      <%= f.text_field :subject, :placeholder =>"Subject", class: 'span12', :required => true %>
+    </div>
+
+    <div class="field">
+      <%= f.text_field :name, :placeholder =>"Your name", class: 'span12'  %>
+    </div>
+
+    <div class="field">
+      <%= f.text_field :email, :placeholder =>"Your email", class: 'span12', :required => true %>
+    </div>
+
+      <div class="actions">
+     
+      <%= f.submit "Send message", :class=>"public-btn" %>
+      
+    </div>
+</div>
+<% end %>
+  </div>
+</div>

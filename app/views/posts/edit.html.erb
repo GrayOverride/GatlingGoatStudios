@@ -1,0 +1,10 @@
+ <% if current_user %>
+        <div class="well">
+      		<%= link_to 'Destroy', :post, method: :delete, data: { confirm: 'Destroy?' } %> |
+			<%= link_to 'Show all posts', posts_path %>
+  		</div>
+ <% end %> 
+
+<h1>Editing post</h1>
+
+<%= render 'form' %>

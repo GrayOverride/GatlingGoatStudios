@@ -1,0 +1,119 @@
+<div class="span1"></div>
+<div class="span10">
+  <% if current_user %>
+  <div class="admin-bar"> 
+    <%= link_to 'Edit this project', edit_project_path(@project) %> |
+    <%= link_to 'Show all', projects_path %>
+  </div>
+  <% end %>
+</div>
+
+<div style="<%= show_project_background %>">
+
+  <br/>  <br/>  <br/>  <br/>
+  <div class="row-fluid" >
+    <div class="span2"></div>
+    <div class="span8">
+      <div class="twintop">
+        <div class="row-fluid">
+          <div class="span2 img-clean img-clean hidden-phone">
+            <%= image_tag "ornament3.png", :size => "100x100",:style=>"float:right;"%>
+          </div>
+          <div class="span8"><%= image_tag @project.banner, :class=>"span12"%></div>
+          <div class="span2 img-clean hidden-phone">
+            <%= image_tag "ornament3.png", :size => "100x100", :style=>"
+            -moz-transform: scaleX(-1);
+            -o-transform: scaleX(-1);
+            -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+            filter: FlipH;"
+            %>
+          </div>
+        </div>
+
+        <br />
+        <br />
+
+        <div class="row-fluid">
+        <div class="span2">
+        </div>
+        <div class="span8">
+          <%=simple_format @project.desc %>
+        </div>
+        <div class="span2"></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="span2"></div>
+  </div>
+
+  <br/>
+  <div class="row-fluid ">
+    <div class="span2"></div>
+    <div class="ticket span8">
+      <div class="row-fluid ">
+        <div class="span2"></div>
+        <div class="span8" id="binder">
+          <div class="img-clean">
+
+           <div class="span2 gallery">
+            <a class="fancybox" rel="group" href="<%= @project.screenshot1 %>"><%= image_tag @project.screenshot1, :size => "100x100"  if @project.screenshot1.file?%></a>
+          </div>
+          <div class="span2  gallery">
+            <a class="fancybox" rel="group" href="<%= @project.screenshot2 %>"><%= image_tag @project.screenshot2, :size => "100x100"  if @project.screenshot2.file?%></a>
+          </div>
+          <div class="span2  gallery">
+            <a class="fancybox" rel="group" href="<%= @project.screenshot3 %>"><%= image_tag @project.screenshot3, :size => "100x100"  if @project.screenshot3.file?%></a>
+          </div>
+          <div class="span2  gallery">
+            <a class="fancybox" rel="group" href="<%= @project.screenshot4 %>"><%= image_tag @project.screenshot4, :size => "100x100"  if @project.screenshot4.file?%></a>
+          </div>
+          <div class="span2  gallery">
+            <a class="fancybox" rel="group" href="<%= @project.screenshot5 %>"><%= image_tag @project.screenshot5, :size => "100x100"  if @project.screenshot5.file?%></a>
+          </div>
+          <div class="span2  gallery">
+            <a class="fancybox" rel="group" href="<%= @project.screenshot6 %>"><%= image_tag @project.screenshot6, :size => "100x100"  if @project.screenshot6.file?%></a>
+          </div>
+        </div>
+      </div>
+      <div class="span2"></div>
+    </div>
+  </div>
+  <div class="span2"></div>
+</div>
+<br/>
+
+<section class="row-fluid">
+  <div class="span2"></div>
+    <div class="span8 navstripe">
+      <div class="row-fluid">
+        <div class="span2 img-clean img-clean hidden-phone">
+          <%= image_tag "ornament3.png", :size => "100x100",:style=>"float:right;"%>
+        </div>
+        <div class="span8">
+          <section class="row-fluid">
+            <div class="span12">
+              <div class="flex-video widescreen"><%=raw @project.trailer %></div>
+            </div>
+          </section>
+        </div>
+        <div class="span2 img-clean hidden-phone">
+          <%= image_tag "ornament3.png", :size => "100x100", :style=>"
+          -moz-transform: scaleX(-1);
+          -o-transform: scaleX(-1);
+          -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+          filter: FlipH;"
+          %>
+        </div>
+      </div>
+    </div>
+  <div class="span2"></div>
+</section>
+<br/>
+<br/>
+</div>
+</div>
+
+

@@ -1,0 +1,25 @@
+<div class="twintop">
+<h3><%= link_to_unless_current post.title, post %></h3>
+<div id="post-pre">
+	<div class="img-clean">
+<% if params[:action] == "index" %>
+   <%= simple_format post.body.slice(0,160) + '...' %>
+   <b><%= image_tag "caret_r.png", :size => "10x10"%><%= link_to_unless_current 'View entire post', post %></b>
+   <br />
+	</div>
+<% elsif params[:action] == "show"%>
+ <%= simple_format post.body %>
+
+   <section class="row-fluid">
+       <div class="span12 homebanner">
+        <div><%= image_tag post.image if post.image.file?%></div>
+      </div>
+  </section>
+ 
+ <br />
+<% end %>
+<br/>
+ <i>Posted <%=post.created_at.strftime("%d %b. %Y") %></i>
+ </div>
+ </div>
+ 

@@ -1,0 +1,12 @@
+ <% if current_user %>
+   <div class="admin-bar span12"> 
+<%= link_to 'Show this project', @project %> |
+<%= link_to 'Show all', projects_path %>
+   </div>
+ <% end %>
+
+<h1>Editing <%= @project.title %></h1>
+
+<%= render 'form' %>
+
+

@@ -1,0 +1,42 @@
+<table>
+
+<% if current_user %>
+<div class="admin-bar"> 
+  <%= link_to 'New Project', new_project_path %>
+</div>
+<% end %>
+
+<% @projects.each do |project| %>
+<br/>
+<div class="row-fluid ticket">
+    <div class="span6">
+        <h3><%= link_to project.title, project %></h3>
+        <%=simple_format project.desc.slice(0,430) + '...' %>
+        <%= link_to 'More about this project', project %>
+    </div>
+    <div class="span6 hidden-phone">
+        <section class="row-fluid ">
+           <div class="span12">
+            <div class="flex-video widescreen"><%=raw project.trailer %></div>
+          </div>
+        </section>
+    </div>
+
+        <div class="span6 visible-phone"><%= image_tag project.banner  if project.banner.file?%>
+        </div>
+    
+</div>
+
+<div class="row-fluid">
+  <div class="span12">
+    <% if current_user %>
+        <div class="admin-bar">
+
+        <%= link_to 'Edit', edit_project_path(project) %> or
+        <%= link_to 'destroy', project, confirm: 'Are you sure?', method: :delete %> <%=project.title%>
+        </div>
+        <% end %>
+    </div>
+</div>
+<% end %>
+</table>

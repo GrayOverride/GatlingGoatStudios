@@ -1,0 +1,31 @@
+<%= form_for(@siteinfo) do |f| %>
+  <% if @siteinfo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@siteinfo.errors.count, "error") %> prohibited this siteinfo from being saved:</h2>
+
+      <ul>
+      <% @siteinfo.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row-fluid">
+    <div class="span4">
+      <%= f.label :welcome_to_gg %><br />
+      <%= f.text_area :blurb, :required => true  %>
+    </div>
+    <div class="span4">
+      <%= f.label :about_us %><br />
+      <%= f.text_area :about, :required => true  %>
+    </div>
+    <div class="span4">
+    <%= f.label :banner %>
+    <p>Recomended resolution for banner: 1090x540</p>
+    <%= f.file_field :banner %>
+    </div>
+</div>
+   <%= f.submit "Publish info" %>
+  
+<% end %>

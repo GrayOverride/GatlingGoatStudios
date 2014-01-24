@@ -1,0 +1,21 @@
+<h1>Messages</h1>
+
+<table class="table table-striped">
+
+<tr>
+  <th><%= sortable "subject" %>
+  <th><%= sortable "name", "From" %></th>
+  <th><%= sortable "created_at", "Recived" %></th>
+  <th>Destroy</th>
+</tr>
+
+<% @messages.each do |message| %>
+  <tr>
+    <td><b><%= link_to message.subject, message %></b></td>
+    <td><%= link_to message.name, message %></td>
+    <td><%=message.created_at.strftime("%d %b. %Y") %></td>
+    <td><%= link_to 'X', message, confirm: 'Destroy this message?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+

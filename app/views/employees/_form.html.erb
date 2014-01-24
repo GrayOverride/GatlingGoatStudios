@@ -1,0 +1,57 @@
+<%= form_for(@employee) do |f| %>
+<% if @employee.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
+
+  <ul>
+    <% @employee.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<div class="row-fluid">
+  <div class="span5">
+    <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name, :required => true %>
+    </div>
+    <div class="field">
+      <%= f.label :title %><br />
+      <%= f.text_field :title %>
+    </div>
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.text_field :email %>
+    </div>
+  </div>
+  <div class="span7">
+    <div class="accordion" id="accordion2">
+      <div class="accordion-group">
+        <div class="accordion-heading">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+            Layout
+          </a>
+        </div>
+        <div id="collapseOne" class="accordion-body collapse in">
+          <div class="accordion-inner">
+           <div class="field">
+             <h3> <%= f.label :link %></h3>
+             <p>Please provide a Url to the persons extrenal portfolio.</p><br />
+             <%= f.text_field :link %>
+           </div>
+           <div class="field">
+            <h3><%= f.label :thumbnail %></h3>
+            <p>Please provide a profile photo - recomended resolution is 500x500.</p><br />
+            <%= f.file_field :avatar %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>

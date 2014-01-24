@@ -1,0 +1,11 @@
+ <% if current_user %>
+   <div class="admin-bar span12"> 
+<%= link_to 'Back to home', siteinfos_path %>
+   </div>
+ <% end %>
+
+<h1>Editing info</h1>
+
+<%= render 'form' %>
+
+

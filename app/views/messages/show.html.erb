@@ -1,0 +1,25 @@
+<div class="admin-bar">
+<%= mail_to @message.email, "Reply" %>
+</div>
+<br/>
+<div class="row-fluid">
+	<div class="span12 twintop">
+<p>
+  <b>From:</b>
+  <%= @message.name %>  (<%=mail_to @message.email %>)
+</p>
+
+<h2>
+  <%= @message.subject %>
+</h2>
+
+<p>
+  <%= simple_format @message.body %>
+</p>
+<br />
+</div>
+</div>
+<div class="admin-bar">
+<%= mail_to @message.email, "Reply" %>
+</div>
+

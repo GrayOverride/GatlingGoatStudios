@@ -1,0 +1,10 @@
+<% if current_user %>
+        <div class="admin-bar"> 
+        	<%= link_to 'New Post', new_post_path %>
+        </div>
+<% end %>
+ 
+<h4>Latest News</h4>
+
+ <%= render :partial => @posts.reverse  %>
+
