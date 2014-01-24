@@ -10,7 +10,7 @@ test:
   username: thegoat
   password: massakaffe
   host: localhost
-  port: 5433
+  port: 5432
   pool: 5
   timeout: 5000
 
@@ -20,6 +20,6 @@ production:
   username: thegoat
   password: massakaffe
   host: localhost
-  port: 5433
+  port: 5432
   pool: 5
   timeout: 5000
